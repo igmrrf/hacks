@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>A Quine. In HTML</title>
+    <style>
+      html {
+        margin: 16px;
+        height: 1%;
+      }
+      * {
+        display: block;
+        font-family: monospace;
+      }
+      html::before {
+        content: "<html>";
+      }
+      html::after {
+        content: "</html>";
+      }
+      style::before {
+        content: "<style>";
+      }
+      style::after {
+        content: "<\/style>";
+      }
+      style {
+        white-space: pre-wrap;
+      }
+      title::before {
+        content: "<title>";
+      }
+      title::after {
+        content: "</title>";
+      }
+      head::before {
+        content: "<head>";
+      }
+      head::after {
+        content: "</head>";
+      }
+
+      body::before {
+        content: "<body>";
+      }
+      body::after {
+        content: "</body>";
+      }
+      a::before {
+        content: "<a>";
+      }
+      a::after {
+        content: "</a>";
+      }
+      p::before {
+        content: "<p>";
+      }
+      p::after {
+        content: "</p>";
+      }
+      a[href]:before {
+        content: '<a style="' attr(style) '" href="' attr(href) '">';
+      }
+    </style>
+  </head>
+  <body>
+    <p>This web page prints its own source code.</p>
+    <a style="text-decoration: none" href="https://igmrrf.com">Inspired by</a>
+  </body>
+</html>
